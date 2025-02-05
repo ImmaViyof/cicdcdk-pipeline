@@ -3,11 +3,11 @@ import os
 
 import aws_cdk as cdk
 
-from cicdcdk_pipeline.cicdcdk_pipeline_stack import CicdcdkPipelineStack
+from cicdcdk_pipeline.cicdcdk_pipeline_stack import AmazonConnectStack
 
 
 app = cdk.App()
-CicdcdkPipelineStack(app, "AmazonConnectStack",
+AmazonConnectStack(app, "AmazonConnectStack",
     # If you don't specify 'env', this stack will be environment-agnostic.
     # Account/Region-dependent features and context lookups will not work,
     # but a single synthesized template can be deployed anywhere.
