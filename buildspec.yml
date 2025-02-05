@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - echo Installing dependencies...
+      - pip install -r requirements.txt
+      - echo Installing AWS CDK...
+      - npm install -g aws-cdk  # Install the AWS CDK globally
+  build:
+    commands:
+      - echo Synthesizing CDK stack...
+      - mkdir -p cdk.out  # Ensure the cdk.out directory exists
+      - cdk synth AmazonConnectStack > cdk.out/template.json  # Use a simpler output file name
+artifacts:
+  files:
+    - cdk.out/template.json  # Ensure the new output file is included
+
+
